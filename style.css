@@ -1,28 +1,40 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Plain Light";
     color: #fff;
 }
-html, body{
+
+html, body {
     height: 100%;
     width: 100%;
+}
+#crsr{
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 50%;
+    /* background-color: white; */
+    border: 1px solid rgb(239, 231, 231);
+    position: fixed;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%,-50%);
 }
 #loader{
     height: 100%;
     width: 100%;
     position: fixed;
     z-index: 999;
-    background-color: #0b0b0b;
+    background-color: #030303;
     padding: 25vh 10vw;
-    font-weight: 500;
 }
+
 .line{
     /* background-color: red; */
     height: fit-content;
     overflow: hidden;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 3vw;
@@ -32,14 +44,15 @@ html, body{
     align-items: center;
     justify-content: center;
     gap: 1vw;
+
 }
 #line1-part1 h5, #line1-part1 h6{
     font-size: 3vw;
     font-weight: 100;
-    font-family:'silk serif';
+    font-family: 'silk serif';
 }
 #line1-part1 h5{
-
+    /* background-color: red; */
     width: 5vw;
     text-align: right;
 }
@@ -48,17 +61,92 @@ html, body{
     text-transform: uppercase;
     font-weight: 900;
 }
+
 .line h2{
-    font-size: 6.5vw;
+    font-size: 5vw;
     text-transform: uppercase;
     font-weight: 900;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes anime {
+    0%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+    48%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        font-family: 'silk serif';
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 1;
+    }
+    100%{
+        font-family: 'silk serif';
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 0;
+    }
 }
 #main{
     position: relative;
-    background-color: #111;
+    background-color: #030303;
 }
 #page1{
     height: 100vh;
     width: 100%;
     background-color: #151515;
+}
+#page1 #nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.3vw 5.5vw;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+#nav-part2 h4{
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+.hero{
+    width: 72%;
+    margin-left: 27%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+}
+.hero:nth-child(2){
+    margin-top: 18vh;
+}
+.hero h1{
+    font-size: 7.1vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 7vw;
+}
+#hero3 #hero31:hover,
+#hero3 #hero32:hover {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 500;
 }
